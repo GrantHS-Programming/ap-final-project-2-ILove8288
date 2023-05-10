@@ -32,6 +32,7 @@ public class GameLoop{
         pc1.printStats();
         System.out.println("As the world spins around you realize you have awoken in a "+ Colors.Cyan+startPOS[rNum]+Colors.Reset+".");
 
+
         if(startPOS[rNum].equalsIgnoreCase(startPOS[0])){
             System.out.println("As you look around you see many drunken patrons talking, laughing, and drinking.\nA large man walks up to you, \"Why are you trying to"+ Colors.Red+" leave"+Colors.Reset+" my fine establishment? is it not up to YOUR standards!?\"");
                 Monster human1 = new Monster("human");
