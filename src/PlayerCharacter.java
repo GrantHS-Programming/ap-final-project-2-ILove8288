@@ -18,6 +18,7 @@ public class PlayerCharacter extends Monster {
         return name;
     }
     public void printStats(){
-        System.out.println(Colors.Cyan+"Age"+Colors.Reset+": "+getAge()+Colors.Cyan+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Cyan+"\nDamage"+Colors.Reset+": "+getDamage());
+        System.out.println("↓ Your stats are shown here. ↓\n");
+        System.out.println(Colors.Cyan+"Age"+Colors.Reset+": "+getAge()+Colors.Cyan+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Cyan+"\nDamage"+Colors.Reset+": "+getDamage()+"\n");
     }
 }

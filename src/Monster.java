@@ -87,6 +87,6 @@ public class Monster {
         health = nHealth;
     }
     public void printMonStats(){
-        System.out.println(Colors.Red+"Age"+Colors.Reset+": "+getAge()+Colors.Red+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Red+"\nDamage"+Colors.Reset+": "+getDamage());
+        System.out.println(Colors.Red+"Age"+Colors.Reset+": "+getAge()+Colors.Red+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Red+"\nDamage"+Colors.Reset+": "+getDamage()+"\n");
     }
 }
