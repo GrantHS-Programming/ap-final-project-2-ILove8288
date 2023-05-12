@@ -14,6 +14,7 @@ public class GameLoop{
         System.out.println("If a sentence is written with a "+ Colors.White_Background+ Colors.Black+ "white background and black text"+ Colors.Reset+" it represents "+ Colors.White_Background+ Colors.Black+"inner thoughts"+ Colors.Reset+"...");
         System.out.println("");
     }
+
     public static void main(String[] args) throws InterruptedException {
         String tutCheck = "";
         boolean choiceOne = false;
