@@ -46,7 +46,7 @@ public class GameLoop{
                 human2.printMonStats();
                 Battle fight1 = new Battle(pc1,human1,human2);
                 while (true){
-                    if(human1.getHealth()>0 || human2.getHealth()>0){
+                    if(pc1.getHealth() > 0 && (human1.getHealth()>0 || human2.getHealth()>0)){
                         fight1.pTurn();
                     }
                     if(human1.getHealth()>0 || human2.getHealth()>0){
