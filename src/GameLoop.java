@@ -24,10 +24,10 @@ public class GameLoop{
         }
         System.out.println("As you drowsily awaken you try to understand what is happening, the first step is to remember your"+Colors.Yellow+" name"+ Colors.Reset +"... ");
         PlayerCharacter pc1 = new PlayerCharacter();
-        System.out.println("AHA! "+ Colors.Cyan+pc1.getName()+ Colors.Reset+", thats it!");
+        System.out.println("AHA! "+ Colors.Cyan+pc1.getName()+ Colors.Reset+", that's it!");
         System.out.println("Now for your"+ Colors.Yellow+" last name"+ Colors.Reset +", what could it be?");
         pc1.setLastName();
-        System.out.println("Oh thats it, "+ Colors.Cyan+pc1.getLastName()+ Colors.Reset+ "!");
+        System.out.println("Oh that's it, "+ Colors.Cyan+pc1.getLastName()+ Colors.Reset+ "!");
         System.out.println("Your arm tingles and you look down, a strange"+ Colors.Cyan+" set of markings"+ Colors.Reset+" starts to appear on your lower forearm... As it comes into focus you can make out what it says...\n");
         pc1.printStats();
         System.out.println("As the world spins around you realize you have awoken in a "+ Colors.Cyan+startPOS[rNum]+Colors.Reset+".");

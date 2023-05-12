@@ -33,7 +33,7 @@ public class Battle{
             if (enemies.get(battleInt - 1).getHealth() <= 0) {
                 enemies.remove(battleInt - 1);
                 if (enemies.size() > 0) {
-                    System.out.println("You " + Colors.Red + "defeated " + Colors.Reset + "the " + Colors.Red + "enemy" + Colors.Reset + "! Attack again.\n");
+                    System.out.println("You " + Colors.Red + "defeated " + Colors.Reset + "the " + Colors.Red + "enemy" + Colors.Reset + "! Move again.\n");
                     System.out.println("Do you want to" + Colors.Red + " attack" + Colors.Reset + " or " + Colors.Blue + "defend" + Colors.Reset + "?");
                     battleStr = choice.next();
                     if(battleInt>enemies.size()){
