@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GameLoop{
     private static Scanner checker = new Scanner(System.in);
-    private static String[] startPOS = {"tavern","tavern","tavern","tavern","tavern"};
+    private static String[] startPOS = {"tavern","forest","forest","forest","tavern"};
     //private static String[] startPOS = {"tavern","forest","back ally","cabin","musty dungeon"};
     static int rNum = (int)(Math.random()*5);
     public static void tutorial(){
@@ -44,13 +44,14 @@ public class GameLoop{
                 human1.printMonStats();
                 System.out.println("The second "+human1.getType()+" you see.");
                 human2.printMonStats();
-                Battle fight1 = new Battle(pc1,human1,human2);
+                pc1.addDefense();
+                Battle fightTavern = new Battle(pc1,human1,human2);
                 while (true){
-                    if(pc1.getHealth() > 0 && (human1.getHealth()>0 || human2.getHealth()>0)){
-                        fight1.pTurn();
+                    if(pc1.getHealth() > 0 && fightTavern.isEnm()){
+                        fightTavern.pTurn();
                     }
-                    if(human1.getHealth()>0 || human2.getHealth()>0){
-                        fight1.eTurn();
+                    if(pc1.getHealth() > 0 && fightTavern.isEnm()){
+                        fightTavern.eTurn();
                     }
                     else{
                         break;
@@ -58,7 +59,31 @@ public class GameLoop{
                 }
             }
         if(startPOS[rNum].equalsIgnoreCase(startPOS[1])){
-
+            Monster bandit1 = new Monster("bandit");
+            Monster bandit2 = new Monster("bandit");
+            Monster dog1 = new Monster("dog",(int)(Math.random()*3)+1);
+            System.out.println("As your eyes start to adjust to the light you can make out a"+Colors.Cyan+" road"+Colors.Reset+" in the distance.");
+            System.out.println(Colors.White_Background+ Colors.Black+"If only I can make it to the road! I'll be able to get out of this god forsaken forest."+ Colors.Reset+"\nAs you start to make your way over to the"+Colors.Cyan+" road"+Colors.Reset+", you can help but think you are being"+Colors.Red+" watched"+Colors.Reset+".");
+            System.out.println("As you are about to reach the"+Colors.Cyan+" road"+Colors.Reset+" you hear a large "+Colors.Red+"CRACK"+Colors.Reset+"! 2 "+Colors.Red+"bandits"+Colors.Reset+" drop from the tree and a"+Colors.Red+" dog"+Colors.Reset+" runs up snarling!\n");
+            System.out.println("The first "+bandit1.getType()+" you see.");
+            bandit1.printMonStats();
+            System.out.println("The second "+bandit2.getType()+" you see.");
+            bandit2.printMonStats();
+            System.out.println("The dog "+dog1.getType()+" you see.");
+            dog1.printMonStats();
+            pc1.addDefense();
+            Battle fightForrest = new Battle(pc1,bandit1,bandit2,dog1);
+            while (true){
+                if(pc1.getHealth() > 0 && fightForrest.isEnm()){
+                    fightForrest.pTurn();
+                }
+                if(pc1.getHealth() > 0 && fightForrest.isEnm()){
+                    fightForrest.eTurn();
+                }
+                else{
+                    break;
+                }
+            }
         }
         if(startPOS[rNum].equalsIgnoreCase(startPOS[2])){
 
