@@ -1,27 +1,27 @@
 import java.util.ArrayList;
 
 public class Monster {
-    static ArrayList<String> mTypes = new ArrayList<String>();
-    public void typeList (){
-        mTypes.add("Vampire");
-        mTypes.add("Werewolf");
-        mTypes.add("Zombie");
-        mTypes.add("Ghoul");
-        mTypes.add("Ghost");
-        mTypes.add("Warlock");
-        mTypes.add("Demon");
-        mTypes.add("Banshee");
-        mTypes.add("Djinn");
-        mTypes.add("Yeti");
-        mTypes.add("Goblin");
-        mTypes.add("Troll");
-        mTypes.add("Orc");
-        mTypes.add("Minotaur");
-        mTypes.add("theif");
-        mTypes.add("human");
-        mTypes.add("bandit");
-        mTypes.add("thug");
-    }
+    //static ArrayList<String> mTypes = new ArrayList<String>();
+    //public static void typeList(){
+    //    mTypes.add("Vampire");
+    //    mTypes.add("Werewolf");
+    //    mTypes.add("Zombie");
+    //    mTypes.add("Ghoul");
+    //    mTypes.add("Ghost");
+    //   mTypes.add("Warlock");
+    //    mTypes.add("Demon");
+    //    mTypes.add("Banshee");
+    //    mTypes.add("Djinn");
+    //    mTypes.add("Yeti");
+    //    mTypes.add("Goblin");
+    //    mTypes.add("Troll");
+    //    mTypes.add("Orc");
+    //    mTypes.add("Minotaur");
+    //   mTypes.add("theif");
+    //   mTypes.add("human");
+    //    mTypes.add("bandit");
+    //    mTypes.add("thug");
+    //}
 
     //holding variables for entities health
     private String[] types;
@@ -64,7 +64,7 @@ public class Monster {
         if (damage<5){
             damage = 4;
         }
-        type = mTypes.get((int)(Math.random()*mTypes.size()));
+        //type = mTypes.get((int)(Math.random()*mTypes.size()));
     }
 
     //Constructor with a preset race
@@ -171,4 +171,5 @@ public class Monster {
     public void printMonStats(){
         System.out.println(Colors.Red+"Age"+Colors.Reset+": "+getAge()+Colors.Red+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Red+"\nDamage"+Colors.Reset+": "+getDamage()+"\n");
     }
+
 }
