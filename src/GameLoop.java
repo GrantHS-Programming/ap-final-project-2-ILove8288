@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GameLoop{
     private static Scanner checker = new Scanner(System.in);
-    private static String[] startPOS = {"tavern","forest","forest","forest","tavern"};
+    private static String[] startPOS = {"tavern","forest","back ally","back ally","back ally"};
     //private static String[] startPOS = {"tavern","forest","back ally","cabin","musty dungeon"};
     static int rNum = (int)(Math.random()*5);
     public static void tutorial(){
@@ -57,6 +57,7 @@ public class GameLoop{
                         break;
                     }
                 }
+            System.out.println("You find the door and rush out. A "+Colors.Cyan+"road"+Colors.Reset+" comes into your sights. Day and night you walk, you walk until you "+Colors.Red+"collapse"+Colors.Reset+".");
             }
         if(startPOS[rNum].equalsIgnoreCase(startPOS[1])){
             Monster bandit1 = new Monster("bandit");
@@ -74,7 +75,7 @@ public class GameLoop{
             pc1.addDefense();
             Battle fightForrest = new Battle(pc1,bandit1,bandit2,dog1);
             while (true){
-                if(pc1.getHealth() > 0 && fightForrest.isEnm()){
+                if(pc1.getHealth() > 0 && fightForrest.isEnm()) {
                     fightForrest.pTurn();
                 }
                 if(pc1.getHealth() > 0 && fightForrest.isEnm()){
@@ -84,9 +85,26 @@ public class GameLoop{
                     break;
                 }
             }
+            System.out.println("As you escape the "+Colors.Red+"scuffle"+Colors.Reset+" and make your way to the "+Colors.Cyan+"road"+Colors.Reset+" you decide to walk. Day and night, shuffling along...");
         }
         if(startPOS[rNum].equalsIgnoreCase(startPOS[2])){
-
+            System.out.println("When you fully come to your senses you see soot floating about. The ally way as a particular stench you cant quite make out. As you begin to stand a huge"+ Colors.Red+" man"+ Colors.Reset+" walks into the ally.");
+            System.out.println("\"Hey there, you better empty your pockets if you know whats good for you.\" You hear the"+ Colors.Red+" man"+ Colors.Reset+" say in a strange and cheery tone.\nAs you try to get a better view on him, the"+ Colors.Red+" man"+ Colors.Reset+" starts running at you!\n");
+            Monster thug1 = new Monster("thug",25);
+            Battle fightCity = new Battle(pc1, thug1);
+            System.out.println("The Man you see.");
+            thug1.printMonStats();
+            while (true){
+                if(pc1.getHealth() > 0 && fightCity.isEnm()) {
+                    fightCity.pTurn();
+                }
+                if(pc1.getHealth() > 0 && fightCity.isEnm()){
+                    fightCity.eTurn();
+                }
+                else{
+                    break;
+                }
+            }
         }
         if(startPOS[rNum].equalsIgnoreCase(startPOS[3])){
 

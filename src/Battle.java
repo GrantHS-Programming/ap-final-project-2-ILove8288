@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Battle{
-    ArrayList<Monster> enemies = new ArrayList<>();
+    public ArrayList<Monster> enemies = new ArrayList<>();
     PlayerCharacter player;
     String battleStr;
     int battleInt;
@@ -39,19 +39,23 @@ public class Battle{
                     System.out.println("You " + Colors.Red + "defeated " + Colors.Reset + "the " + Colors.Red + "enemy" + Colors.Reset + "! Move again.\n");
                     System.out.println("Do you want to" + Colors.Red + " attack" + Colors.Reset + " or " + Colors.Blue + "defend" + Colors.Reset + "?");
                     battleStr = choice.next();
-                    if(battleInt>enemies.size()){
-                        battleInt = enemies.size();
-                    }
                     if (battleStr.equalsIgnoreCase("attack")) {
                         System.out.println("There are " + enemies.size() + " " + Colors.Red + "enemies" + Colors.Reset + "," + Colors.Yellow + " what" + Colors.Reset + " enemy do you want to " + Colors.Red + "attack" + Colors.Reset + "? (use number keys. 1, 2, 3, etc...)");
                         battleInt = choice.nextInt();
+                        if(battleInt>enemies.size()){
+                            battleInt = enemies.size();
+                        }
                         System.out.println("You use the moment of"+Colors.Cyan+" confusion"+Colors.Reset+" to lunge out and "+Colors.Red+"attack"+Colors.Reset+" another"+Colors.Red+" enemy"+Colors.Reset+"!\n");
                         enemies.get(battleInt - 1).damageHealth(player.getDamage());
                         enemies.get(battleInt - 1).printMonStats();
+                        if(enemies.get(battleInt - 1).getHealth()<=0){
+                            enemies.remove(battleInt - 1);
+                        }
+
                     }
                     if (battleStr.equalsIgnoreCase("defend")) {
                         battleInt = (int)(Math.random()*enemies.size());
-                        System.out.println(Colors.Red+"Enemy "+Colors.Reset+(battleInt+1)+" attacks you and does "+enemies.get(battleInt).getDamage()/2+" "+Colors.Red+"damage"+Colors.Reset+".\n");
+                        System.out.println(Colors.Red+"Enemy "+Colors.Reset+(battleInt)+" attacks you and does "+enemies.get(battleInt).getDamage()/2+" "+Colors.Red+"damage"+Colors.Reset+".\n");
                         player.damageHealth(enemies.get(battleInt).getDamage()/2);
                         player.printStats();
                         System.out.println("\nYou "+Colors.Blue+"reflect"+Colors.Reset+" half of their "+Colors.Red+"attack"+Colors.Reset+" back and do "+enemies.get(battleInt).getDamage()/2+ Colors.Red+" damage"+Colors.Reset+".\n");
@@ -60,6 +64,9 @@ public class Battle{
                         System.out.println("\nYour turn ends.\n");
                         player.printStats();
                         nextDefend = true;
+                        if(enemies.get(battleInt).getHealth()<=0){
+                            enemies.remove(battleInt);
+                        }
                     }
 
                 }
@@ -77,7 +84,10 @@ public class Battle{
             enemies.get(battleInt).printMonStats();
             System.out.println("\nYour turn ends.\n");
             player.printStats();
-            nextDefend = true;
+            if(enemies.get(battleInt).getHealth()<=0) {
+                enemies.remove(battleInt);
+                nextDefend = true;
+            }
         }
         }
         public void eTurn(){
@@ -87,6 +97,7 @@ public class Battle{
                 System.out.println("They do no"+Colors.Red+" damage"+Colors.Reset+".");
                 player.addDefense(-1);
                 player.printStats();
+                nextDefend = false;
             }
             else {
                 battleInt = (int)(Math.random()*enemies.size());

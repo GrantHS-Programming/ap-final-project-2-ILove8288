@@ -4,12 +4,15 @@ public class PlayerCharacter extends Monster {
     //child class of monster specific to some
 
     private int defenseCount = 10;
+    private int damage;
 
     private Scanner scanned = new Scanner(System.in);
     private String name;
     private String lName;
     public PlayerCharacter(){
+        super.setType("human");
         name =  scanned.next();
+        super.setDamage(super.getDamage()+20);
     }
     public void setLastName(){
         lName = scanned.next();
