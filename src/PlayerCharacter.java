@@ -36,4 +36,7 @@ public class PlayerCharacter extends Monster {
             System.out.println(Colors.Red+"! YOU HAVE DIED !"+Colors.Reset);
         }
     }
+    public int getDefense(){
+        return defenseCount;
+    }
 }

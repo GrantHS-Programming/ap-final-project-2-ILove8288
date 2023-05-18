@@ -55,13 +55,14 @@ public class Battle{
                     }
                     if (battleStr.equalsIgnoreCase("defend")) {
                         battleInt = (int)(Math.random()*enemies.size());
-                        System.out.println(Colors.Red+"Enemy "+Colors.Reset+(battleInt)+" attacks you and does "+enemies.get(battleInt).getDamage()/2+" "+Colors.Red+"damage"+Colors.Reset+".\n");
-                        player.damageHealth(enemies.get(battleInt).getDamage()/2);
+                        System.out.println(Colors.Red+"Enemy "+Colors.Reset+(battleInt+1)+" attacks you and does "+enemies.get(battleInt).getDamage()/4+" "+Colors.Red+"damage"+Colors.Reset+".\n");
+                        player.damageHealth(enemies.get(battleInt).getDamage()/4);
                         player.printStats();
                         System.out.println("\nYou "+Colors.Blue+"reflect"+Colors.Reset+" half of their "+Colors.Red+"attack"+Colors.Reset+" back and do "+enemies.get(battleInt).getDamage()/2+ Colors.Red+" damage"+Colors.Reset+".\n");
                         enemies.get(battleInt).damageHealth(enemies.get(battleInt).getDamage()/2);
                         enemies.get(battleInt).printMonStats();
                         System.out.println("\nYour turn ends.\n");
+                        System.out.println("\nYou have "+Colors.Cyan+player.getDefense()+Colors.Reset+Colors.Blue+" Defenses"+Colors.Reset+" left.\n");
                         player.printStats();
                         nextDefend = true;
                         if(enemies.get(battleInt).getHealth()<=0){
@@ -83,10 +84,11 @@ public class Battle{
             enemies.get(battleInt).damageHealth(enemies.get(battleInt).getDamage()/2);
             enemies.get(battleInt).printMonStats();
             System.out.println("\nYour turn ends.\n");
+            System.out.println("\nYou have "+Colors.Cyan+player.getDefense()+Colors.Reset+Colors.Blue+" Defenses"+Colors.Reset+" left.\n");
             player.printStats();
+            nextDefend = true;
             if(enemies.get(battleInt).getHealth()<=0) {
                 enemies.remove(battleInt);
-                nextDefend = true;
             }
         }
         }
@@ -94,7 +96,7 @@ public class Battle{
             if(nextDefend){
                 battleInt = (int)(Math.random()*enemies.size());
                 System.out.println("The "+Colors.Red+enemies.get(battleInt).getType()+Colors.Reset+" rushes towards you without realising you have gotten into your"+Colors.Blue+" defensive"+Colors.Reset+" stance!\n");
-                System.out.println("They do no"+Colors.Red+" damage"+Colors.Reset+".");
+                System.out.println("They do no"+Colors.Red+" damage"+Colors.Reset+".\n");
                 player.addDefense(-1);
                 player.printStats();
                 nextDefend = false;
