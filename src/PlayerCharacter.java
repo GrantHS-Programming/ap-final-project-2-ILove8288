@@ -13,6 +13,7 @@ public class PlayerCharacter extends Monster {
         super.setType("human");
         name =  scanned.next();
         super.setDamage(super.getDamage()+20);
+        super.setAge((int) (Math.random()*55+10));
     }
     public void setLastName(){
         lName = scanned.next();

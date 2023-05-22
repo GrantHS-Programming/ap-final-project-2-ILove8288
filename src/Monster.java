@@ -168,6 +168,9 @@ public class Monster {
     public void setDamage(int nDamage){
         damage=nDamage;
     }
+    public void setAge(int nAge){
+        age = nAge;
+    }
     public void printMonStats(){
         System.out.println(Colors.Red+"Age"+Colors.Reset+": "+getAge()+Colors.Red+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Red+"\nDamage"+Colors.Reset+": "+getDamage()+"\n");
     }
