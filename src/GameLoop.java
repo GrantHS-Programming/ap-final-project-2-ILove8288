@@ -27,6 +27,7 @@ public class GameLoop {
         }
         System.out.println("As you drowsily awaken you try to understand what is happening, the first step is to remember your" + Colors.Yellow + " name" + Colors.Reset + "... ");
         PlayerCharacter pc1 = new PlayerCharacter();
+        pc1.setDamage(pc1.getDamage()-10);
         System.out.println("AHA! " + Colors.Cyan + pc1.getName() + Colors.Reset + ", that's it!");
         System.out.println("Now for your" + Colors.Yellow + " last name" + Colors.Reset + ", what could it be?");
         pc1.setLastName();
@@ -196,7 +197,7 @@ public class GameLoop {
                 }
             } else if (check.equalsIgnoreCase("yes") || check.equalsIgnoreCase("true")) {
                 System.out.println("As you approach the village, a crowd gathers. They don't seem " + Colors.Red + "hostile" + Colors.Reset + ", although they are acting strange they offer you food and water.");
-                System.out.println("You drink and eat this gifts, as you eat this food you feel yourself gaining " + Colors.Blue + "energy" + Colors.Reset + ". The aches, pains, and dreariness from your travels reseed as your arm tingles, you look down to see your" + Colors.Cyan + " tattoo" + Colors.Reset + " shifting.\n");
+                System.out.println("You drink and eat this gifts, as you eat this food you feel yourself gaining " + Colors.Blue + "energy" + Colors.Reset + ". The aches, pains, and dreariness from your travels reseed as your arm tingles, you look down to see your" + Colors.Cyan + " markings" + Colors.Reset + " shift.\n");
                 pc1.setHealth(pc1.getHealth() + 5);
                 pc1.printStats();
                 System.out.println("Your " + Colors.Cyan + "health" + Colors.Reset + " increased by " + Colors.Cyan + "5" + Colors.Reset + ".");
@@ -262,7 +263,37 @@ public class GameLoop {
                 System.exit(0);
             }
         }
-        System.out.println(Colors.Black+Colors.White_Background+"What a strange encounter.\n"+Colors.Reset+"You think to yourself as you walk away into the night...");
-        System.out.println("The air hung heavy with a sense of abandonment, as if the spirits of the past still clung to this forsaken place.");
+        System.out.println(Colors.Black+Colors.White_Background+"What a strange encounter."+Colors.Reset+"\nYou think to yourself as you walk away into the night...");
+        System.out.println("The air hung heavy with a sense of abandonment, as if the spirits of the past still clung to this forsaken place. As the forsaken road grew ever more treacherous, you encountered "+Colors.Red+"dangerous"+Colors.Reset+" beasts and faced natural obstacles that threatened to halt your progress. Yet, you "+Colors.Cyan+"persevered"+Colors.Cyan+", your unwavering spirit undeterred. With each trial you faced, you grew more adept, learning to navigate the perils that await you.\nAs you settle down by a tree and feel that all too familiar tingle, you look down to see your "+Colors.Cyan+"markings"+Colors.Reset+" shift once again. You start feeling a bit more "+Colors.Cyan+"healthy"+Colors.Reset+" and feel your "+Colors.Cyan+"strength"+Colors.Reset+" revitalised.\n\n");
+        pc1.setDamage(pc1.getDamage()+4);
+        pc1.setHealth(pc1.getHealth()+10);
+        pc1.printStats();
+        System.out.println("Your " + Colors.Cyan + "health" + Colors.Reset + " increased by " + Colors.Cyan + "10" + Colors.Reset + ".");
+        System.out.println("Your " + Colors.Cyan + "damage" + Colors.Reset + " increased by " + Colors.Cyan + "4" + Colors.Reset + ".");
+        System.out.println("After your rest you resume your journey with a new vigor.");
+        System.out.println("As you arrive deep into the heart of the forsaken road, you stumble upon a forgotten "+Colors.Cyan+"temple"+Colors.Reset+", its stone structure crumbling but still standing defiantly against the test of time. Intrigued, you cautiously ventured inside, his footsteps reverberating in the empty halls. The air was thick with a sense of ancient power, and as you delved deeper, you discovered a long-lost "+Colors.Cyan+"artifact"+Colors.Cyan+", a mystical amulet believed to hold great "+Colors.Cyan+"secrets"+Colors.Reset+".");
+        System.out.println("As your reach out to grab it, you notice statues on the wall start to move, shift, come to life...");
+        Monster statue1 = new Monster("Statue",20);
+        Monster statue2 = new Monster("Statue",20);
+        System.out.println("The "+statue1.getType()+" to your left.\n");
+        statue1.printMonStats();
+        System.out.println("The "+statue1.getType()+" to your right.\n");
+        statue2.printMonStats();
+        Battle fightTemple = new Battle(pc1,statue1,statue2);
+        while (true) {
+            if (pc1.getHealth() > 0 && fightTemple.isEnm()) {
+                fightTemple.pTurn();
+            }
+            if (pc1.getHealth() > 0 && fightTemple.isEnm()) {
+                fightTemple.eTurn();
+            } else {
+                break;
+            }
+        }
+        if (pc1.getHealth()<1){
+            System.exit(0);
+        }
+        System.out.println("As you watch the "+Colors.Red+"statues"+Colors.Reset+" crumble on the floor, you attention returns to the amulet...");
+
     }
 }

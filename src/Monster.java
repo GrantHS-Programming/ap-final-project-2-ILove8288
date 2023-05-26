@@ -64,7 +64,7 @@ public class Monster {
         if (damage<5){
             damage = 4;
         }
-        //type = mTypes.get((int)(Math.random()*mTypes.size()));
+        checker();
     }
 
     //Constructor with a preset race
@@ -101,6 +101,7 @@ public class Monster {
             damage = 4;
         }
         type = mType;
+        checker();
     }
     //preset race and age
     public Monster(String mType, int aType){
@@ -136,6 +137,7 @@ public class Monster {
             damage = 4;
         }
         type = mType;
+        checker();
     }
 
     //getters
@@ -170,6 +172,11 @@ public class Monster {
     }
     public void setAge(int nAge){
         age = nAge;
+    }
+    private void checker(){
+        if (health < 1){
+            setHealth(1);
+        }
     }
     public void printMonStats(){
         System.out.println(Colors.Red+"Age"+Colors.Reset+": "+getAge()+Colors.Red+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Red+"\nDamage"+Colors.Reset+": "+getDamage()+"\n");
