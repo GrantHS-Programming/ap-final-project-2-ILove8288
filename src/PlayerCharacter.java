@@ -31,12 +31,15 @@ public class PlayerCharacter extends Monster {
         defenseCount+=defenseInt;
     }
     public void printStats(){
-        System.out.println("↓ Your stats are shown here. ↓\n");
-        System.out.println(Colors.Cyan+"Age"+Colors.Reset+": "+getAge()+Colors.Cyan+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Cyan+"\nDamage"+Colors.Reset+": "+getDamage()+"\n");
         if(getHealth() <= 0){
             System.out.println(Colors.Red+"! YOU HAVE DIED !"+Colors.Reset);
         }
+        else{
+            System.out.println("↓ Your stats are shown here. ↓\n");
+            System.out.println(Colors.Cyan+"Age"+Colors.Reset+": "+getAge()+Colors.Cyan+"\nHealth"+Colors.Reset+": "+getHealth()+Colors.Cyan+"\nDamage"+Colors.Reset+": "+getDamage()+"\n");
+        }
     }
+
     public int getDefense(){
         return defenseCount;
     }

@@ -34,9 +34,8 @@ public class GameLoop {
         System.out.println("Oh that's it, " + Colors.Cyan + pc1.getLastName() + Colors.Reset + "!");
         System.out.println("Your arm tingles and you look down, a strange" + Colors.Cyan + " set of markings" + Colors.Reset + " starts to appear on your lower forearm... As it comes into focus you can make out what it says...\n");
         pc1.printStats();
+
         System.out.println("As the world spins around you realize you have awoken in a " + Colors.Cyan + startPOS[rNum] + Colors.Reset + ".");
-
-
         if (startPOS[rNum].equalsIgnoreCase(startPOS[0])) {
             System.out.println("As you look around you see many drunken patrons talking, laughing, and drinking.\nA large man walks up to you, \"Why are you trying to" + Colors.Red + " leave" + Colors.Reset + " my fine establishment? is it not up to YOUR standards!?\"");
             Monster human1 = new Monster("human");
@@ -264,7 +263,7 @@ public class GameLoop {
             }
         }
         System.out.println(Colors.Black+Colors.White_Background+"What a strange encounter."+Colors.Reset+"\nYou think to yourself as you walk away into the night...");
-        System.out.println("The air hung heavy with a sense of abandonment, as if the spirits of the past still clung to this forsaken place. As the forsaken road grew ever more treacherous, you encountered "+Colors.Red+"dangerous"+Colors.Reset+" beasts and faced natural obstacles that threatened to halt your progress. Yet, you "+Colors.Cyan+"persevered"+Colors.Cyan+", your unwavering spirit undeterred. With each trial you faced, you grew more adept, learning to navigate the perils that await you.\nAs you settle down by a tree and feel that all too familiar tingle, you look down to see your "+Colors.Cyan+"markings"+Colors.Reset+" shift once again. You start feeling a bit more "+Colors.Cyan+"healthy"+Colors.Reset+" and feel your "+Colors.Cyan+"strength"+Colors.Reset+" revitalised.\n\n");
+        System.out.println("The air hung heavy with a sense of abandonment, as if the spirits of the past still clung to this forsaken place. As the forsaken road grew ever more treacherous, you encountered "+Colors.Red+"dangerous"+Colors.Reset+" beasts and faced natural obstacles that threatened to halt your progress. Yet, you "+Colors.Cyan+"persevered"+Colors.Reset+", your unwavering spirit undeterred. With each trial you faced, you grew more adept, learning to navigate the perils that await you.\nAs you settle down by a tree and feel that all too familiar tingle, you look down to see your "+Colors.Cyan+"markings"+Colors.Reset+" shift once again. You start feeling a bit more "+Colors.Cyan+"healthy"+Colors.Reset+" and feel your "+Colors.Cyan+"strength"+Colors.Reset+" revitalised.\n\n");
         pc1.setDamage(pc1.getDamage()+4);
         pc1.setHealth(pc1.getHealth()+10);
         pc1.printStats();
@@ -294,6 +293,47 @@ public class GameLoop {
             System.exit(0);
         }
         System.out.println("As you watch the "+Colors.Red+"statues"+Colors.Reset+" crumble on the floor, you attention returns to the amulet...");
-
+        System.out.println("You reach out and clasp the amulet,  feeling a surge of "+Colors.Cyan+"energy"+Colors.Reset+" coursing through his veins. The amulet whispered secrets of forgotten civilizations, guiding him with a newfound wisdom. Empowered by its magic, he continued his journey with renewed vigor and a clearer sense of purpose.");
+        System.out.println("Do you decide to "+Colors.Green+"stow"+Colors.Reset+" or "+Colors.Green+"wear"+Colors.Reset+" the amulet?");
+        check = checker.next();
+        if (check.equalsIgnoreCase("stow")){
+            System.out.println("Resisting the urge to put on the amulet, you slide it into your pocket. ");
+            System.out.println("Exiting the temple, something about the road doesn't seem right. Something seems off.");
+            System.out.println(Colors.White_Background+Colors.Black+"I feel like the road is brighter than it was before... The grass seems greener..."+Colors.Reset);
+        }
+        if (check.equalsIgnoreCase("wear")){
+            System.out.println("You put on the amulet and start to vigorously shake and contort, as your vision fades to black the last thing you see is the floor rushing towards you face...");
+            System.out.println("You awaken to the sound of marching and clanging armor. As your eyes flutter open you feel something around your neck. You reach up to feel it and get hit in the back of the head. Scanning your surroundings you see a crowd of people, but they don't look quite right. You hear a foreign language shouted from behind you, with a deafening response from the crowd... You hear the man behind you walk to the other side of the platform... Feeling the platform drop from under you... All you can think is about how you are going to "+Colors.Red+"die"+Colors.Reset+".");
+            randInt = (int)(Math.random()*4+1);
+            if (randInt==1){
+                pc1.damageHealth(1000000000);
+                System.out.println();
+                pc1.printStats();
+                System.exit(0);
+            }
+            else {
+                System.out.println("The amulet bursts with power and fires out beams, striking down many of the people in the crowd, the rope breaks and you fall to the ground. You rush over to a fallen solider and take up his weapon. Feeling that "+Colors.Cyan+"tingle"+Colors.Reset+" you look down at your markings and see damage and health increase. The door is in sight and you make you way over to it... "+Colors.Red+"AMBUSH!"+Colors.Reset);
+                pc1.addDefense(2);
+                pc1.setHealth(pc1.getHealth()+(int)(Math.random()*9+1));
+                pc1.setDamage(pc1.getDamage()+(int)(Math.random()*3+1));
+                Monster fSolider1 = new Monster("forsaken solider");
+                System.out.println("The "+fSolider1.getType()+" who rushed up on you!");
+                fSolider1.printMonStats();
+                Battle fightEscape = new Battle(pc1,fSolider1);
+                while (true) {
+                    if (pc1.getHealth() > 0 && fightEscape.isEnm()) {
+                        fightEscape.pTurn();
+                    }
+                    if (pc1.getHealth() > 0 && fightEscape.isEnm()) {
+                        fightEscape.eTurn();
+                    } else {
+                        break;
+                    }
+                }
+                if (pc1.getHealth()<1){
+                    System.exit(0);
+                }
+            }
+        }
     }
 }
