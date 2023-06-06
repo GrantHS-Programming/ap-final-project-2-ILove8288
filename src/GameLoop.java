@@ -28,7 +28,7 @@ public class GameLoop {
         }
         System.out.println("As you drowsily awaken you try to understand what is happening, the first step is to remember your" + Colors.Yellow + " name" + Colors.Reset + "... ");
         PlayerCharacter pc1 = new PlayerCharacter();
-        pc1.setDamage(pc1.getDamage()-6);
+        pc1.setDamage(pc1.getDamage() - 6);
         System.out.println("AHA! " + Colors.Cyan + pc1.getName() + Colors.Reset + ", that's it!");
         System.out.println("Now for your" + Colors.Yellow + " last name" + Colors.Reset + ", what could it be?");
         pc1.setLastName();
@@ -59,7 +59,7 @@ public class GameLoop {
                     break;
                 }
             }
-            if (pc1.getHealth()<1){
+            if (pc1.getHealth() < 1) {
                 System.exit(0);
             }
             if (!fightTavern.isEnm() && pc1.getHealth() > 0) {
@@ -92,7 +92,7 @@ public class GameLoop {
                     break;
                 }
             }
-            if (pc1.getHealth()<1){
+            if (pc1.getHealth() < 1) {
                 System.exit(0);
             }
             if (!fightForrest.isEnm() && pc1.getHealth() > 0) {
@@ -116,12 +116,12 @@ public class GameLoop {
                 } else {
                     break;
                 }
-                if (pc1.getHealth()<1){
+                if (pc1.getHealth() < 1) {
                     System.exit(0);
                 }
             }
             if (!fightCity.isEnm() && pc1.getHealth() > 0) {
-                System.out.println(Colors.White_Background + Colors.Black + "I cant believe I made it out of that alive! At least I can see the road from here."+Colors.Reset);
+                System.out.println(Colors.White_Background + Colors.Black + "I cant believe I made it out of that alive! At least I can see the road from here." + Colors.Reset);
                 System.out.println("As you make your way down the " + Colors.Cyan + "road" + Colors.Reset + " you realise you might be walking for a while...");
                 pass = true;
             }
@@ -149,7 +149,7 @@ public class GameLoop {
                     break;
                 }
             }
-            if (pc1.getHealth()<1){
+            if (pc1.getHealth() < 1) {
                 System.exit(0);
             }
             if (!fightCabin.isEnm() && pc1.getHealth() > 0) {
@@ -158,7 +158,7 @@ public class GameLoop {
             }
         }
         if (pass) {
-            System.out.println("After a long walk, and a longer rest you find yourself in a forsaken land you have never seen the likes of in a long time. As you start your travels for the day the "+Colors.Cyan+"road"+Colors.Reset+" starts to wind its way through desolate landscapes, with gnarled trees and overgrown foliage casting long shadows upon its path. Few travelers dared to venture upon this treacherous route, for the " + Colors.Cyan + "road" + Colors.Reset + " was rumored to be haunted by" + Colors.Red + " malevolent spirits" + Colors.Reset + " and plagued by roaming\n" + Colors.Red + "bandits" + Colors.Reset + ". It was said that those who braved the journey often met a" + Colors.Red + " gruesome fate" + Colors.Reset + ", never to be seen again.");
+            System.out.println("After a long walk, and a longer rest you find yourself in a forsaken land you have never seen the likes of in a long time. As you start your travels for the day the " + Colors.Cyan + "road" + Colors.Reset + " starts to wind its way through desolate landscapes, with gnarled trees and overgrown foliage casting long shadows upon its path. Few travelers dared to venture upon this treacherous route, for the " + Colors.Cyan + "road" + Colors.Reset + " was rumored to be haunted by" + Colors.Red + " malevolent spirits" + Colors.Reset + " and plagued by roaming\n" + Colors.Red + "bandits" + Colors.Reset + ". It was said that those who braved the journey often met a" + Colors.Red + " gruesome fate" + Colors.Reset + ", never to be seen again.");
             System.out.println("However, there was one intrepid traveler who, driven by a burning curiosity, or a need for escape, set upon this path. This time the adventurer is you, " + Colors.Cyan + pc1.getName() + " " + pc1.getLastName() + Colors.Reset + ".");
             System.out.println("Clutching a" + Colors.Cyan + " map" + Colors.Reset + " gathered from your fallen " + Colors.Red + "foes" + Colors.Reset + ", you continue on your perilous expedition, prepared for whatever lay ahead. The first leg of your journey has been quiet, you have seen a few other travelers and a " + Colors.Cyan + "village" + Colors.Reset + " up ahead.\n" + Colors.Black + Colors.White_Background + "I could stop at this town and gather some supplies, there may be enemies though..." + Colors.Reset + "\nIs it really " + Colors.Green + "true" + Colors.Reset + " you want to stop?");
             check = checker.next();
@@ -192,7 +192,7 @@ public class GameLoop {
                         break;
                     }
                 }
-                if (pc1.getHealth()<1){
+                if (pc1.getHealth() < 1) {
                     System.exit(0);
                 }
             } else if (check.equalsIgnoreCase("yes") || check.equalsIgnoreCase("true")) {
@@ -235,7 +235,7 @@ public class GameLoop {
                         break;
                     }
                 }
-                if (pc1.getHealth()<1){
+                if (pc1.getHealth() < 1) {
                     System.exit(0);
                 }
             }
@@ -259,27 +259,27 @@ public class GameLoop {
                     break;
                 }
             }
-            if (pc1.getHealth()<1){
+            if (pc1.getHealth() < 1) {
                 System.exit(0);
             }
         }
-        System.out.println(Colors.Black+Colors.White_Background+"What a strange encounter."+Colors.Reset+"\nYou think to yourself as you walk away into the night...");
-        System.out.println("The air hung heavy with a sense of abandonment, as if the spirits of the past still clung to this forsaken place. As the forsaken "+Colors.Cyan+"road"+Colors.Reset+" grew ever more treacherous, you encountered "+Colors.Red+"dangerous"+Colors.Reset+" beasts and faced natural obstacles that threatened to halt your progress. Yet, you "+Colors.Cyan+"persevered"+Colors.Reset+", your unwavering spirit undeterred. With each trial you faced, you grew more adept, learning to navigate the perils that await you.\nAs you settle down by a tree and feel that all too familiar tingle, you look down to see your "+Colors.Cyan+"markings"+Colors.Reset+" shift once again. You start feeling a bit more "+Colors.Cyan+"healthy"+Colors.Reset+" and feel your "+Colors.Cyan+"strength"+Colors.Reset+" revitalised.\n\n");
-        pc1.setDamage(pc1.getDamage()+4);
-        pc1.setHealth(pc1.getHealth()+10);
+        System.out.println(Colors.Black + Colors.White_Background + "What a strange encounter." + Colors.Reset + "\nYou think to yourself as you walk away into the night...");
+        System.out.println("The air hung heavy with a sense of abandonment, as if the spirits of the past still clung to this forsaken place. As the forsaken " + Colors.Cyan + "road" + Colors.Reset + " grew ever more treacherous, you encountered " + Colors.Red + "dangerous" + Colors.Reset + " beasts and faced natural obstacles that threatened to halt your progress. Yet, you " + Colors.Cyan + "persevered" + Colors.Reset + ", your unwavering spirit undeterred. With each trial you faced, you grew more adept, learning to navigate the perils that await you.\nAs you settle down by a tree and feel that all too familiar tingle, you look down to see your " + Colors.Cyan + "markings" + Colors.Reset + " shift once again. You start feeling a bit more " + Colors.Cyan + "healthy" + Colors.Reset + " and feel your " + Colors.Cyan + "strength" + Colors.Reset + " revitalised.\n\n");
+        pc1.setDamage(pc1.getDamage() + 4);
+        pc1.setHealth(pc1.getHealth() + 10);
         pc1.printStats();
         System.out.println("Your " + Colors.Cyan + "health" + Colors.Reset + " increased by " + Colors.Cyan + "10" + Colors.Reset + ".");
         System.out.println("Your " + Colors.Cyan + "damage" + Colors.Reset + " increased by " + Colors.Cyan + "4" + Colors.Reset + ".");
         System.out.println("After your rest you resume your journey with a new vigor.");
-        System.out.println("As you arrive deep into the heart of the forsaken "+Colors.Cyan+"road"+Colors.Reset+", you stumble upon a forgotten "+Colors.Cyan+"temple"+Colors.Reset+", its stone structure crumbling but still standing defiantly against the test of time. Intrigued, you cautiously ventured inside, his footsteps reverberating in the empty halls. The air was thick with a sense of ancient power, and as you delved deeper, you discovered a long-lost "+Colors.Cyan+"artifact"+Colors.Cyan+", a mystical amulet believed to hold great "+Colors.Cyan+"secrets"+Colors.Reset+".");
+        System.out.println("As you arrive deep into the heart of the forsaken " + Colors.Cyan + "road" + Colors.Reset + ", you stumble upon a forgotten " + Colors.Cyan + "temple" + Colors.Reset + ", its stone structure crumbling but still standing defiantly against the test of time. Intrigued, you cautiously ventured inside, his footsteps reverberating in the empty halls. The air was thick with a sense of ancient power, and as you delved deeper, you discovered a long-lost " + Colors.Cyan + "artifact" + Colors.Cyan + ", a mystical amulet believed to hold great " + Colors.Cyan + "secrets" + Colors.Reset + ".");
         System.out.println("As your reach out to grab it, you notice statues on the wall start to move, shift, come to life...");
-        Monster statue1 = new Monster("Statue",50);
-        Monster statue2 = new Monster("Statue",50);
-        System.out.println("The "+statue1.getType()+" to your left.\n");
+        Monster statue1 = new Monster("Statue", 50);
+        Monster statue2 = new Monster("Statue", 50);
+        System.out.println("The " + statue1.getType() + " to your left.\n");
         statue1.printMonStats();
-        System.out.println("The "+statue1.getType()+" to your right.\n");
+        System.out.println("The " + statue1.getType() + " to your right.\n");
         statue2.printMonStats();
-        Battle fightTemple = new Battle(pc1,statue1,statue2);
+        Battle fightTemple = new Battle(pc1, statue1, statue2);
         while (true) {
             if (pc1.getHealth() > 0 && fightTemple.isEnm()) {
                 fightTemple.pTurn();
@@ -290,43 +290,42 @@ public class GameLoop {
                 break;
             }
         }
-        if (pc1.getHealth()<1){
+        if (pc1.getHealth() < 1) {
             System.exit(0);
         }
-        System.out.println("As you watch the "+Colors.Red+"statues"+Colors.Reset+" crumble on the floor, you attention returns to the amulet...");
-        System.out.println("You reach out and clasp the amulet,  feeling a surge of "+Colors.Cyan+"energy"+Colors.Reset+" coursing through his veins. The amulet whispered secrets of forgotten civilizations, guiding him with a newfound wisdom. Empowered by its magic, he continued his journey with renewed vigor and a clearer sense of purpose.");
-        System.out.println("Do you decide to "+Colors.Green+"stow"+Colors.Reset+" or "+Colors.Green+"wear"+Colors.Reset+" the amulet?");
+        System.out.println("As you watch the " + Colors.Red + "statues" + Colors.Reset + " crumble on the floor, you attention returns to the amulet...");
+        System.out.println("You reach out and clasp the amulet,  feeling a surge of " + Colors.Cyan + "energy" + Colors.Reset + " coursing through his veins. The amulet whispered secrets of forgotten civilizations, guiding him with a newfound wisdom. Empowered by its magic, he continued his journey with renewed vigor and a clearer sense of purpose.");
+        System.out.println("Do you decide to " + Colors.Green + "stow" + Colors.Reset + " or " + Colors.Green + "wear" + Colors.Reset + " the amulet?");
         check = checker.next();
-        if (check.equalsIgnoreCase("stow")){
+        if (check.equalsIgnoreCase("stow")) {
             System.out.println("Resisting the urge to put on the amulet, you slide it into your pocket. ");
-            System.out.println("Exiting the temple, something about the "+Colors.Cyan+"road"+Colors.Reset+" doesn't seem right. Something seems off.");
-            System.out.println(Colors.White_Background+Colors.Black+"I feel like the road is brighter than it was before... The grass seems greener..."+Colors.Reset);
+            System.out.println("Exiting the temple, something about the " + Colors.Cyan + "road" + Colors.Reset + " doesn't seem right. Something seems off.");
+            System.out.println(Colors.White_Background + Colors.Black + "I feel like the road is brighter than it was before... The grass seems greener..." + Colors.Reset);
         }
-        if (check.equalsIgnoreCase("wear")){
+        if (check.equalsIgnoreCase("wear")) {
             System.out.println("You put on the amulet and start to vigorously shake and contort, as your vision fades to black the last thing you see is the floor rushing towards you face...");
-            System.out.println("You awaken to the sound of marching and clanging armor. As your eyes flutter open you feel something around your neck. You reach up to feel it and get hit in the back of the head. Scanning your surroundings you see a crowd of people, but they don't look quite right. You hear a foreign language shouted from behind you, with a deafening response from the crowd... You hear the man behind you walk to the other side of the platform... Feeling the platform drop from under you... All you can think is about how you are going to "+Colors.Red+"die"+Colors.Reset+".");
-            randInt = (int)(Math.random()*4+1);
-            if (randInt==1){
+            System.out.println("You awaken to the sound of marching and clanging armor. As your eyes flutter open you feel something around your neck. You reach up to feel it and get hit in the back of the head. Scanning your surroundings you see a crowd of people, but they don't look quite right. You hear a foreign language shouted from behind you, with a deafening response from the crowd... You hear the man behind you walk to the other side of the platform... Feeling the platform drop from under you... All you can think is about how you are going to " + Colors.Red + "die" + Colors.Reset + ".");
+            randInt = (int) (Math.random() * 4 + 1);
+            if (randInt == 1) {
                 pc1.damageHealth(1000000000);
                 System.out.println();
                 pc1.printStats();
                 System.exit(0);
-            }
-            else {
-                System.out.println("The amulet bursts with power and fires out beams, striking down many of the people in the crowd, the rope breaks and you fall to the ground. You rush over to a fallen solider and take up his weapon. Feeling that "+Colors.Cyan+"tingle"+Colors.Reset+" you look down at your markings and see damage and health increase. The door is in sight and as you make you way over to it... "+Colors.Red+"AMBUSH!"+Colors.Reset);
+            } else {
+                System.out.println("The amulet bursts with power and fires out beams, striking down many of the people in the crowd, the rope breaks and you fall to the ground. You rush over to a fallen solider and take up his weapon. Feeling that " + Colors.Cyan + "tingle" + Colors.Reset + " you look down at your markings and see damage and health increase. The door is in sight and as you make you way over to it... " + Colors.Red + "AMBUSH!" + Colors.Reset);
                 pc1.addDefense(2);
-                pc1.setHealth(pc1.getHealth()+(int)(Math.random()*9+1));
-                pc1.setDamage(pc1.getDamage()+(int)(Math.random()*3+1));
+                pc1.setHealth(pc1.getHealth() + (int) (Math.random() * 9 + 1));
+                pc1.setDamage(pc1.getDamage() + (int) (Math.random() * 3 + 1));
                 Monster fSolider1 = new Monster("forsaken solider");
                 Monster fSolider2 = new Monster("forsaken solider");
                 Monster fSolider3 = new Monster("forsaken solider");
-                System.out.println("The first "+fSolider1.getType()+" who rushed up on you!");
+                System.out.println("The first " + fSolider1.getType() + " who rushed up on you!");
                 fSolider1.printMonStats();
-                System.out.println("The second "+fSolider1.getType()+" who rushed up on you!");
+                System.out.println("The second " + fSolider1.getType() + " who rushed up on you!");
                 fSolider2.printMonStats();
-                System.out.println("The third "+fSolider1.getType()+" who rushed up on you!");
+                System.out.println("The third " + fSolider1.getType() + " who rushed up on you!");
                 fSolider3.printMonStats();
-                Battle fightEscape = new Battle(pc1,fSolider1,fSolider2,fSolider3);
+                Battle fightEscape = new Battle(pc1, fSolider1, fSolider2, fSolider3);
                 while (true) {
                     if (pc1.getHealth() > 0 && fightEscape.isEnm()) {
                         fightEscape.pTurn();
@@ -337,25 +336,78 @@ public class GameLoop {
                         break;
                     }
                 }
-                if (pc1.getHealth()<1){
+                if (pc1.getHealth() < 1) {
                     System.exit(0);
                 }
                 System.out.println("You crash your way through the door and realise that you have made it to the entrance to the temple... It just doesn't seem the same as the first time you came here. ");
             }
         }
-        System.out.println("As you travel down the "+Colors.Cyan+"road"+Colors.Reset+" your encounters took on a different tone. Instead of "+Colors.Red+"enemies"+Colors.Reset+" and "+Colors.Red+"threats"+Colors.Reset+", he crossed paths with individuals in need, seeking solace and guidance. He became a beacon of hope in this desolate realm, extending a helping hand to those who had lost their way. His knowledge and wisdom, bolstered by the amulet's magic, became a source of comfort and inspiration for the lost souls he encountered.");
-        System.out.println("The first of these encounters was with a young man. Perhaps 19 years of age on this "+Colors.Cyan+"road"+Colors.Reset+" all alone. The traveler's clothes were tattered, and their eyes held a glimmer of desperation mixed with a hint of hope.");
-        System.out.println("You greet the traveler asking what brings him onto this "+Colors.Cyan+"road"+Colors.Reset+".");
-        System.out.println("The traveler greets you in return stating that \"I've been lost for days, searching for a path that leads to something more than desolation and darkness. This forsaken road seemed my only option. There is no possibilities left for me... I have been searching for my whole life with this "+Colors.Cyan+"road"+Colors.Reset+" being my final option. Please will you "+Colors.Red+"end"+Colors.Reset+" my journey here. Please...\"");
-        System.out.println("Do you decide to "+Colors.Yellow+"kill"+Colors.Reset+" him and take up his offer, or "+Colors.Yellow+"persuade"+Colors.Reset+" him to keep living?");
+        System.out.println("As you travel down the " + Colors.Cyan + "road" + Colors.Reset + " your encounters took on a different tone. Instead of " + Colors.Red + "enemies" + Colors.Reset + " and " + Colors.Red + "threats" + Colors.Reset + ", he crossed paths with individuals in need, seeking solace and guidance. He became a beacon of hope in this desolate realm, extending a helping hand to those who had lost their way. His knowledge and wisdom, bolstered by the amulet's magic, became a source of comfort and inspiration for the lost souls he encountered.");
+        System.out.println("The first of these encounters was with a young man. Perhaps 19 years of age on this " + Colors.Cyan + "road" + Colors.Reset + " all alone. The traveler's clothes were tattered, and their eyes held a glimmer of desperation mixed with a hint of hope.");
+        System.out.println("You greet the traveler asking what brings him onto this " + Colors.Cyan + "road" + Colors.Reset + ".");
+        System.out.println("The traveler greets you in return stating that \"I've been lost for days, searching for a path that leads to something more than desolation and darkness. This forsaken road seemed my only option. There is no possibilities left for me... I have been searching for my whole life with this " + Colors.Cyan + "road" + Colors.Reset + " being my final option. Please will you " + Colors.Red + "end" + Colors.Reset + " my journey here. Please...\"");
+        System.out.println("Do you decide to " + Colors.Yellow + "kill" + Colors.Reset + " him and take up his offer, or " + Colors.Yellow + "persuade" + Colors.Reset + " him to keep living?");
         check = checker.next();
-        if (check.equalsIgnoreCase("persuade")){
-            System.out.println("\"I understand the feeling all too well. This "+Colors.Cyan+"road"+Colors.Reset+", once cloaked in shadows and despair, has undergone a transformation. It now carries a glimmer of hope, fueled by tales of redemption and discovery.\" You say.");
+        if (check.equalsIgnoreCase("persuade")) {
+            System.out.println("\"I understand the feeling all too well. This " + Colors.Cyan + "road" + Colors.Reset + ", once cloaked in shadows and despair, has undergone a transformation. It now carries a glimmer of hope, fueled by tales of redemption and discovery.\" You say.");
             System.out.println("The traveler perks up, a glimmer in his eyes... \"Redemption and discovery? I never thought such possibilities existed along this treacherous path. Tell me, traveler, what experiences have you had that bring such hope?\"");
+            System.out.println("You settle down next to him and say \"Ah, my friend, the " + Colors.Cyan + "road" + Colors.Reset + " has been filled with both " + Colors.Red + "peril" + Colors.Reset + " and " + Colors.Cyan + "wonder" + Colors.Reset + ". I've encountered ancient ruins and mystical artifacts, each holding secrets and untold stories. Along the way, I've faced " + Colors.Red + "adversaries" + Colors.Reset + " and " + Colors.Red + "challenges" + Colors.Reset + " that tested my strength, but with each victory, the " + Colors.Cyan + "road" + Colors.Reset + " seemed to shift, as if responding to my determination.\"");
+            System.out.println("\"My point is that there is more on the desolate " + Colors.Cyan + "road" + Colors.Reset + " than may seem... Keep searching and you will find your way...\"");
+            randInt = (int) (Math.random() * 3);
+            if (randInt != 1) {
+                System.out.println("\"Thank you, thank you, thank you... You have given me hope to keep on my way. I shall perceive this journey under a new light!\"");
+            }
+            if (randInt == 1) {
+                System.out.println("\"I see your way... I have thought and tried for too many years. As just a 19 year old I should not be suffering so... Please if you will not give me "+Colors.Red+"death"+Colors.Reset+" I shall giveth to myself...\"");
+                System.out.println("You walk away with an awful feeling, his screams haunting every thought... ");
+                System.out.println(Colors.White_Background+Colors.Black+"How will I be able to live... I couldn't... I should have helped, been better...");
+            }
+        }
+        else {
+            System.out.println("As the traveler has decided his fate, you raise your sword pause for a second, see this traveler lost in his own despair, and bring down your sword in a sweeping arc...");
+            System.out.println("The traveler "+Colors.Red+"died"+Colors.Reset+" a silent "+Colors.Red+"death"+Colors.Reset);
+        }
+        System.out.println("\nAfter a while more of traveling the road you arrive at a inn.");
+        if(rNum == 0){
+            System.out.println("After walking in you realise that this is te fateful tavern you woke in... It looks like there has been a shift in ownership since your departure, as you see no familiar faces. This is for the best.");
+            System.out.println("You settle down into a chair and order some food... You wake up the next morning.");
+            System.out.println("\"Why are you trying to" + Colors.Red +" leave" + Colors.Reset + " my fine establishment? is it not up to YOUR standards!? NAW im just joking with you!\" Freaked out you look up to see who said this to you... Feeling awfully familiar ");
+            System.out.println("\"YA know I heard that the old owner said that to someone and then they "+Colors.Reset+"killed"+Colors.Reset+" him?!??! CAN YOU BELIEVE THAT! You were passed out old night traveller... You should get going.\"");
         }
         else{
-            System.out.println("As the traveler has decided his fate, you raise your sword pause for a second, see this traveler lost in his own despair, and bring down your sword in a sweeping arc...");
-            System.out.println("The traveler died a silent death");
+            System.out.println("After walking in you realise that this is te fateful tavern you woke in... It looks like there has been a shift in ownership since your departure, as you see no familiar faces. This is for the best.");
+            System.out.println("You settle down into a chair and order some food... You wake up the next morning.");
+            System.out.println("You make your way out of the tavern feeling "+Colors.Cyan+"rejuvenated"+Colors.Reset+".");
+            pc1.setHealth(pc1.getHealth()+5);
+        }
+        System.out.println("As you get outside of the tavern you see a mugging! You rush over to interfere...");
+        Monster bandit3 = new Monster("bandit");
+        System.out.println("The " + bandit3.getType() + " mugging a civilian!");
+        bandit3.printMonStats();
+        Battle fightMugging = new Battle(pc1,bandit3);
+        while (true) {
+            if (pc1.getHealth() > 0 && fightMugging.isEnm()) {
+                fightMugging.pTurn();
+            }
+            if (pc1.getHealth() > 0 && fightMugging.isEnm()) {
+                fightMugging.eTurn();
+            } else {
+                break;
+            }
+        }
+        if (pc1.getHealth() < 1) {
+            System.exit(0);
+        }
+        System.out.println("After giving the stolen goods back to the civilian you get beckoned over by someone in a official uniform...");
+        System.out.println("\"OI! I saw what you did over there. That was mighty impressive bruv... You wan' a job as a top level enforcer? You could settle down here for a while... No need to always travel right? "+Colors.Yellow+"Yes"+Colors.Reset+" or "+Colors.Yellow+"no"+Colors.Reset+".");
+        check = checker.next();
+        if (check.equalsIgnoreCase("yes")||check.equalsIgnoreCase("sure")|check.equalsIgnoreCase("true")){
+            System.out.println("You settle down in a city going my the name of Eldoria. The Captain was correct, you don't always need to be traveling... Sometimes its better to settle down in one place and rest, get to know people, and raise a family. You live in Eldoria until you "+Colors.Red+"die"+Colors.Reset+" of old age...");
+            System.out.println(Colors.Green+"THE END"+Colors.Reset);
+
+        }
+        else {
+
         }
     }
 }
