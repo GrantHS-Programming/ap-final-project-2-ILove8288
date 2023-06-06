@@ -404,7 +404,7 @@ public class GameLoop {
         if (check.equalsIgnoreCase("yes")||check.equalsIgnoreCase("sure")|check.equalsIgnoreCase("true")){
             System.out.println("You settle down in a city going my the name of Eldoria. The Captain was correct, you don't always need to be traveling... Sometimes its better to settle down in one place and rest, get to know people, and raise a family. You live in Eldoria until you "+Colors.Red+"die"+Colors.Reset+" of old age...");
             System.out.println(Colors.Green+"THE END"+Colors.Reset);
-
+            ADD ENDING TRUE OR FALSE
         }
         else {
 
