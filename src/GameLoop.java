@@ -295,7 +295,7 @@ public class GameLoop {
             }
         }
         if (!check.equalsIgnoreCase(pc1.getName())) {
-            System.out.println("\"ɎØɄ ₮Ⱨł₦₭ ɎØɄ ₵₳₦ JɄ₴₮ " + Colors.Red + "Ⱡ-Ⱡ-Ⱡ-ⱠłɆ" + Colors.Reset + " ₮-₮Ø ₥Ɇ? ₮ⱧɆ Ⱡ₳₴₮ " + Colors.Red + "₮Ɽ₳VɆⱠɆⱤ" + Colors.Red + " ₩ⱧØ ĐłĐ ₮Ⱨ₳₮ ₩₳₴₦'₮ ₳₴ ⱠɄ₵₭Ɏ...\"");
+            System.out.println("\"ɎØɄ ₮Ⱨł₦₭ ɎØɄ ₵₳₦ JɄ₴₮ " + Colors.Red + "Ⱡ-Ⱡ-Ⱡ-ⱠłɆ" + Colors.Reset + " ₮-₮Ø ₥Ɇ? ₮ⱧɆ Ⱡ₳₴₮ " + Colors.Red + "₮Ɽ₳VɆⱠɆⱤ" + Colors.Reset + " ₩ⱧØ ĐłĐ ₮Ⱨ₳₮ ₩₳₴₦'₮ ₳₴ ⱠɄ₵₭Ɏ...\"");
             Thread.sleep(500);
             System.out.println("As you continue to look at the creature you can't figure out what it is, then the creature " + Colors.Red + "lunges" + Colors.Reset + " at you!");
             Thread.sleep(500);
@@ -386,7 +386,8 @@ public class GameLoop {
                 System.out.println();
                 pc1.printStats();
                 System.exit(0);
-            } else {
+            }
+            else {
                 System.out.println("The amulet bursts with power and fires out beams, striking down many of the people in the crowd, the rope breaks and you fall to the ground. You rush over to a fallen solider and take up his weapon. Feeling that " + Colors.Cyan + "tingle" + Colors.Reset + " you look down at your markings and see damage and health increase. The door is in sight and as you make you way over to it... " + Colors.Red + "AMBUSH!" + Colors.Reset);
                 Thread.sleep(500);
                 pc1.addDefense(2);
@@ -480,7 +481,7 @@ public class GameLoop {
             Thread.sleep(500);
         }
         else{
-            System.out.println("After walking in you realise that this is te fateful tavern you woke in... It looks like there has been a shift in ownership since your departure, as you see no familiar faces. This is for the best.");
+            System.out.println("Walking in you get a cheery feeling as the coziness of the inn seeps into your body.");
             Thread.sleep(500);
             System.out.println("You settle down into a chair and order some food... You wake up the next morning.");
             Thread.sleep(500);
@@ -511,12 +512,12 @@ public class GameLoop {
         }
         System.out.println("After giving the stolen goods back to the civilian you get beckoned over by someone in a official uniform...");
         Thread.sleep(500);
-        System.out.println("\"OI! I saw what you did over there. That was mighty impressive bruv... You wan' a job as a top level enforcer? You could set'le down 'ere for a while... No need to always travel right? "+Colors.Yellow+"Yes"+Colors.Reset+" or "+Colors.Yellow+"no"+Colors.Reset+".");
+        System.out.println("\"OI! I saw what you did over there. That was mighty impressive bruv... You wan' a job as a top level enforcer? You could set'le down 'ere for a while... No need to always travel right? \n"+Colors.Yellow+"Yes"+Colors.Reset+" or "+Colors.Yellow+"no"+Colors.Reset+".");
         check = checker.next();
         if (check.equalsIgnoreCase("yes")||check.equalsIgnoreCase("sure")|check.equalsIgnoreCase("true")){
-            System.out.println("You settle down in a city going my the name of Eldoria. The Captain was correct, you don't always need to be traveling... Sometimes its better to settle down in one place and rest, get to know people, and raise a family. You live in Eldoria until you "+Colors.Red+"die"+Colors.Reset+" of old age...");
+            System.out.println("You settle down in a city going my the name of Eldoria. The Captain was correct, you don't always need to be traveling... Sometimes its better to settle down in one place and rest, get to know people, and raise a family. You live in Eldoria expecting to "+Colors.Red+"die"+Colors.Reset+" of old age...");
             Thread.sleep(200);
-            System.out.println(Colors.Green+"THE END"+Colors.Reset);
+            System.out.println(Colors.Green+"\nTHE END\n"+Colors.Reset);
             pass = checker.nextBoolean();
             if (pass){
                 System.exit(0);
@@ -525,7 +526,11 @@ public class GameLoop {
                 System.out.println("Years of living in Eldoria has been eventful, but with enforcers patrolling it has been relatively peaceful... With crime at an all time low, the enforcers were on a skeleton crew... This was also the night planned by the "+Colors.Red+"\'brigade\'"+Colors.Reset+", the organized crime group that was thought to have left the city...");
                 Thread.sleep(500);
                 System.out.println("In the middle of the night you hear the "+Colors.Red+"raid"+Colors.Reset+" sirens... "+Colors.Red+"Screams"+Colors.Reset+"... and the crackle of one thousand "+Colors.Red+"fires"+Colors.Reset+"...");
-                System.out.println("By the time you make it out of your house... "+Colors.Red+"Death..."+Colors.Reset+" ");
+                Thread.sleep(500);
+                System.out.println("By the time you make it out of your house... "+Colors.Red+"Death"+Colors.Reset+" and "+Colors.Red+"smoke"+Colors.Reset+" fills the air...");
+                Thread.sleep(500);
+                System.out.println("With everyone you know "+Colors.Red+"dead"+Colors.Reset+" you dont know what to do... returning to the "+Colors.Cyan+"road"+Colors.Reset+" seems like the best course of action");
+                Thread.sleep(500);
             }
         }
         else {
